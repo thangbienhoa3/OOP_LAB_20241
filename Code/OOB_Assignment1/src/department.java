@@ -21,6 +21,15 @@ public class department {
         }
         else System.out.print("Cannot add more employees");
     }
+    public int caculateTotalSalary(){
+        int totalSalary = 0;
+        for(int i = 0;i < employeeStack.getSize();i++){
+            if(employeeStack.getElement(i) != null){
+                totalSalary += employeeStack.getElement(i).caculateSalary();
+            }
+        }
+        return totalSalary;
+    }
     public void printInfo(){
         for(int i = 0;i < employeeStack.getSize();i++){
             if(employeeStack.getElement(i) != null){
