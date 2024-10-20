@@ -25,6 +25,6 @@ public class employee{
         return basicSalary * salaryCoefficient;
     }
     public void printInfo(){
-        System.out.println("Name: " + name + " Salary coefficient: " + salaryCoefficient);
+        System.out.println("Name: " + name + " | Salary coefficient: " + salaryCoefficient);
     }
 }
