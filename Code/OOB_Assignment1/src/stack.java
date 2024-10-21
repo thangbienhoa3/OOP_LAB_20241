@@ -13,10 +13,16 @@ public class stack {
         }
     }
     public void pop(employee nv){
-        for(int i = 0;i < employeeList.size();i++){
-            if(employeeList.get(i).getName().equals(nv.getName())){
-                employeeList.remove(i);
-            }
+        List <employee> tmpList = new ArrayList<employee>();
+        int i = employeeList.size()-1;
+        while(i >= 0 && employeeList.get(i).equals(nv) == false){
+            tmpList.add(employeeList.get(i));
+            employeeList.remove(i);
+            i--;
+        }
+        if(i >= 0){employeeList.remove(i);};
+        for(i = tmpList.size()-1;i >= 0;i--){
+            employeeList.add(tmpList.get(i));
         }
     }
     public int getSize() {

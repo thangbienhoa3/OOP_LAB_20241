@@ -21,6 +21,9 @@ public class department {
         }
         else System.out.print("Cannot add more employees");
     }
+    public void eliminateEmployees(employee nv){
+        employeeStack.pop(nv);
+    }
     public int caculateTotalSalary(){
         int totalSalary = 0;
         for(int i = 0;i < employeeStack.getSize();i++){
@@ -31,7 +34,7 @@ public class department {
         return totalSalary;
     }
     public void printInfo(){
-        for(int i = 0;i < employeeStack.getSize();i++){
+        for(int i = employeeStack.getSize()-1;i >= 0;i--){
             if(employeeStack.getElement(i) != null){
                 employeeStack.getElement(i).printInfo();
             }
